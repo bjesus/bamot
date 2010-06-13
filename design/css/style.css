@@ -32,6 +32,9 @@ span.title {
 h2 {
   border-bottom: lightgrey solid 1px; }
 
+h3.line {
+  border-bottom: lightgrey solid 1px; }
+
 #footer {
   background: black;
   color: grey;
