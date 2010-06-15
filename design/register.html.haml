@@ -1,0 +1,78 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "he", "dir" => "rtl"}
+  %head
+    %meta(content="text/html; charset=UTF-8"
+          http-equiv="content-type")
+    %script(type="text/javascript"
+            src="js/jquery-1.4.2-min.js")
+    %link(rel="stylesheet"
+          href="css/screen.css"
+          type="text/css")
+    %link(rel="stylesheet"
+          href="css/style.css"
+          type="text/css")
+
+    %title במות
+    :css
+      input, input[type="text"], input[type="password"], select {
+        margin-bottom: 2.5em;
+        border: 1px solid #BBBBBB;
+      }
+      input[type="submit"] {
+        -moz-box-shadow: #000 0px 0px 2px;
+        -webkit-box-shadow: #000 0px 0px 2px;
+      }
+      sub {
+        color: grey;
+      }
+  %body
+    #page
+      #topbar
+        %span.logo במות
+        %span מערכת מזמינה לשיחה
+        #nav
+          %ul
+            %li התחלה
+            %li העלאת יצירה
+            %li גליונות קודמים
+            %li חיפוש
+            %li מה זה בכלל
+            %li(style="color: white;") הרשמה
+      #content
+      
+        %div.span-18
+          %h2 הרשמה לאתר  
+          %div.span-9
+            %h3 טלפון #{"<sub> (כל הטלפון, לא רק סיומת) </sub>"}
+            %input(type="tel" placeholder="9732384" required style="width: 90px;")
+            %span - 
+            %input(type="tel" placeholder="054" required style="width: 50px;" value="054")
+            %h3 סיסמה
+            %input(type="password" required)
+            %h3 ושוב סיסמה #{"<sub> (אותה אחת!) </sub>"}
+            %input(type="password" required)
+            %h3
+              %input(type="submit" value="רשום אותי לאתר!" style="font-size: 150%; margin: 2em;")
+          %div.span-9.last
+            %h3 שם מלא #{"<sub> (שם פרטי + שם אמצעי + כינוי + שם משפחה) </sub>"}
+            %input(type="text" placeholder="השם המלא שלכם" required)
+            %h3 גרעין #{"<sub> (נגיד במחולות) </sub>"}
+            %select
+              %option במחולות, תל-חי
+              %option חותם, תל-חי
+            %h3 דואר אלקטרוני #{"<sub> (לא לשכוח שטרודל) </sub>"}
+            %input(type="email" placeholder="tusik@gmail.com" required)
+
+        %div.span-6.last
+          %p
+            :maruku
+              **למה בכלל להרשם לאתר?**  
+              הרשמה לאתר מאפשרת לכם לפרסם בו יצירות שלכם - טקסט, תמונה, ציור, קול ואפילו וידאו. בלי משתמש רשום באתר תוכלו רק לצפות בתכנים שאחרים מפרסים. לא חבל?
+              
+              **מה זה משנה מאיזה גרעין אני?**  
+              אחד מהבסיסים של האתר (בניגוד לאינטרנט בהרבה מקרים) הוא היעדר האנונימיות שבו. חשוב לכתוב מאיזה גרעין אתם, מה השם המלא ומה מספר הטלפון שלכם כדי שניתן יהיה לזהות אתכם וכדי שיעמדו פנים מאחורי היצירות באתר. משתמשים עם פרטים מונפצים פשוט יוסרו מהאתר.
+              
+              **זה מסובך להרשם לאתר?**  
+              לא, פשוט צריך להפסיק לשאול שאלות ולמלא את הפרטים בצד שמאל!
+      #footer
+        %span מערכת במות היא תוכנה חופשית ומומלצת לצפייה בדפדפן חופשי 
