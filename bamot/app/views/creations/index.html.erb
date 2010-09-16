@@ -1,0 +1,35 @@
+<h1>Listing creations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Topic</th>
+    <th>News</th>
+    <th>Kind</th>
+    <th>Summary</th>
+    <th>Content</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @creations.each do |creation| %>
+  <tr>
+    <td><%= creation.name %></td>
+    <td><%= creation.topic_id %></td>
+    <td><%= creation.news %></td>
+    <td><%= creation.kind_id %></td>
+    <td><%= creation.summary %></td>
+    <td><%= creation.content %></td>
+    <td><%= creation.user_id %></td>
+    <td><%= link_to 'Show', creation %></td>
+    <td><%= link_to 'Edit', edit_creation_path(creation) %></td>
+    <td><%= link_to 'Destroy', creation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Creation', new_creation_path %>

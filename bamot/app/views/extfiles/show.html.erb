@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @extfile.name %>
+</p>
+
+<p>
+  <b>Path:</b>
+  <%= @extfile.path %>
+</p>
+
+
+<%= link_to 'Edit', edit_extfile_path(@extfile) %> |
+<%= link_to 'Back', extfiles_path %>

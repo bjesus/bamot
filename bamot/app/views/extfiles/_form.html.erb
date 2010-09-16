@@ -1,0 +1,25 @@
+<%= form_for(@extfile) do |f| %>
+  <% if @extfile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@extfile.errors.count, "error") %> prohibited this extfile from being saved:</h2>
+
+      <ul>
+      <% @extfile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :path %><br />
+    <%= f.text_area :path %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

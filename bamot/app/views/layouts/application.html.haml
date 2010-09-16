@@ -1,0 +1,48 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "he", "dir" => "rtl"}
+  %head
+    %meta(content="text/html; charset=UTF-8"
+          http-equiv="content-type")
+    %script(type="text/javascript"
+            src="/javascripts/jquery-1.4.2-min.js")
+    %link(rel="stylesheet"
+          href="/css/screen.css"
+          type="text/css")
+    %link(rel="stylesheet"
+          href="/css/style.css"
+          type="text/css")
+
+    %title במות
+  %body
+    #page
+      #topbar
+        %span.logo במות
+        %span מערכת מזמינה לשיחה
+        #nav
+          %ul
+            %li(style="color: white;")= link_to("התחלה", "/")
+            %li= link_to("העלאת יצירה", "/submit")
+            %li= link_to("גליונות קודמים", "/archives")
+            %li= link_to("חיפוש", "/search")
+            %li= link_to("מה זה בכלל", "/about")
+            %li(style="float: left;")
+              - if user_signed_in?
+                %span= "מחובר כ"+current_user.firstname+" | "
+                %span
+                  = link_to('ניתוק', destroy_user_session_path)
+
+              - else
+                %span= link_to 'הרשמה', new_user_registration_path
+                %span
+                  = link_to('התחברות', new_user_session_path)
+      #content
+        - if flash[:notice]
+          #notice
+            %p= flash[:notice]
+        - if flash[:error]
+          #error
+            %p= flash[:error]
+        = yield
+      #footer
+        %span מערכת במות היא תוכנה חופשית ומומלצת לצפייה בדפדפן חופשי
+        %span= link_to "View List of Users", users_path

@@ -1,0 +1,25 @@
+<h1>Listing extfiles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Path</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @extfiles.each do |extfile| %>
+  <tr>
+    <td><%= extfile.name %></td>
+    <td><%= extfile.path %></td>
+    <td><%= link_to 'Show', extfile %></td>
+    <td><%= link_to 'Edit', edit_extfile_path(extfile) %></td>
+    <td><%= link_to 'Destroy', extfile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Extfile', new_extfile_path %>

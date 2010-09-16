@@ -1,0 +1,25 @@
+<h1>Listing garins</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Grade</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @garins.each do |garin| %>
+  <tr>
+    <td><%= garin.name %></td>
+    <td><%= garin.grade_id %></td>
+    <td><%= link_to 'Show', garin %></td>
+    <td><%= link_to 'Edit', edit_garin_path(garin) %></td>
+    <td><%= link_to 'Destroy', garin, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Garin', new_garin_path %>

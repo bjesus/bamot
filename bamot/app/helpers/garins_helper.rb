@@ -1,0 +1,2 @@
+module GarinsHelper
+end
