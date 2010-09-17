@@ -1,48 +1,32 @@
 %div.span-12
   %div.span-6
-    %h3!=@gallery[1].name + "<sub> / "+@gallery[1].user.firstname+" "+@gallery[1].user.lastname+"</sub>"
+    %h3!=@textgallery[1].name + "<sub> / "+@textgallery[1].user.firstname+" "+@textgallery[1].user.lastname+"</sub>"
     %p
-      :maruku
-        דג קטן הלך לטיול
-        ופגש שם דגים רבים אחרים
-        אבל הוא לא דיבר איתם
-
-        יש דגים נסתרים
-        לא נבין לא נדע
-        נעשה גם דגים
-        שנראים בלי סיבה
+      :textile
+        #{@textgallery[1].summary}
   %div.span-6.last
-    %h3!=@gallery[2].name + "<sub> / "+@gallery[2].user.firstname+" "+@gallery[2].user.lastname+"</sub>"
-    %img(src="imgs/couple.jpg"
-         class="fp-thumb")
+    %h3!=@photosgallery[0].name + "<sub> / "+@photosgallery[0].user.firstname+" "+@photosgallery[0].user.lastname+"</sub>"
+    = image_tag(@photosgallery[0].image.url(:medium), {'class'=>'fp-thumb'})
   %div.span-6
-    %h3!=@gallery[3].name + "<sub> / "+@gallery[3].user.firstname+" "+@gallery[3].user.lastname+"</sub>"
-    %img(src="imgs/wish.jpg"
-         class="fp-thumb")
+    %h3!=@photosgallery[1].name + "<sub> / "+@photosgallery[1].user.firstname+" "+@photosgallery[1].user.lastname+"</sub>"
+    = image_tag(@photosgallery[1].image.url(:medium), {'class'=>'fp-thumb'})
   %div.span-6.last
-    %h3!=@gallery[0].name + "<sub> / "+@gallery[0].user.firstname+" "+@gallery[0].user.lastname+"</sub>"
+    %h3!=@textgallery[0].name + "<sub> / "+@textgallery[0].user.firstname+" "+@textgallery[0].user.lastname+"</sub>"
     %p
-      :maruku
-        דג קטן הלך לטיול
-        ופגש שם דגים רבים אחרים
-        אבל הוא לא דיבר איתם
-
-        יש דגים נסתרים
-        לא נבין לא נדע
-        נעשה גם דגים
-        שנראים בלי סיבה
+      :textile
+        #{@textgallery[0].summary}
   %div.span-12.last
     %p.more.space הצג את כל יצירות הנושא החודשי >>
   %div.span-6
     %h3!=@news[0].name + "<sub> / "+@news[0].user.firstname+" "+@news[0].user.lastname+"</sub>"
     %p
-      :maruku
-        הרבה מדברים על המצור על עזה, אבל אף אחד לא מדבר על המצור על עזה!! חשבתי לאחרונה ששווה לדבר על זה קצת, ולומר מה דעתנו בעניין.
+      :textile
+        #{@news[0].summary}
   %div.span-6.last
     %h3!=@news[1].name + "<sub> / "+@news[1].user.firstname+" "+@news[1].user.lastname+"</sub>"
     %p
-      :maruku
-        אני מניח שגם אתם מתכוננים לקייצת, בדיוק כמו אצלנו. זה נחמד, אבל מה עם המצור על עזה? חשבתי שכדאי לדבר קצת על הקייצות בהקשר העזתי שלהן, ולחקור קצת התחום.
+      :textile
+        #{@news[1].summary}
   %div.span-12.last
     %p.more הצג את כל יצירות האקטואליה >>
 %div.span-12.last
