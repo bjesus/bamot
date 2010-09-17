@@ -8,7 +8,6 @@ class CreateCreations < ActiveRecord::Migration
       t.integer :kind_id
       t.text :summary
       t.text :content
-
       t.timestamps
     end
   end
