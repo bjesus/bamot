@@ -74,4 +74,7 @@ Bamot::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   match 'submit', :to => 'creations#new'
+  match 'about', :to => 'home#about'
+  match 'search', :to => 'home#search'
+  match 'news', :to => 'home#news'
 end
