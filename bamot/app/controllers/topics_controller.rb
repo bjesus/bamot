@@ -1,4 +1,7 @@
 class TopicsController < ApplicationController
+
+  before_filter :admin, :except => [:index, :show]
+
   # GET /topics
   # GET /topics.xml
   def index

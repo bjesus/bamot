@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+
+  before_filter :authenticate_user!
+
   def index
     @user = current_user
     @creations = Creation.order("created_at DESC").limit(5)
@@ -14,4 +17,13 @@ class HomeController < ApplicationController
     @random = Creation.find( (1..5).map { rids.delete_at( rids.size * rand ) } )
   end
 
+  def about
+  end
+
+  def search
+  end
+
+  def news
+    @news = Creation.where('news'=>true).order("created_at DESC").limit(20)
+  end
 end

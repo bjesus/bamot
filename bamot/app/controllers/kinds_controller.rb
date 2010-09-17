@@ -1,4 +1,7 @@
 class KindsController < ApplicationController
+
+  before_filter :admin, :except => [:show]
+
   # GET /kinds
   # GET /kinds.xml
   def index

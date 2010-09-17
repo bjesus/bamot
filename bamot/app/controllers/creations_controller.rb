@@ -1,4 +1,10 @@
 class CreationsController < ApplicationController
+
+  before_filter :authenticate_user!
+  before_filter :fetch_post, :only => [:edit, :update, :destroy]
+  before_filter :authorise, :only => [:edit, :update, :destroy]
+  before_filter :admin, :only => [:index]
+
   # GET /creations
   # GET /creations.xml
   def index
@@ -14,7 +20,10 @@ class CreationsController < ApplicationController
   # GET /creations/1.xml
   def show
     @creation = Creation.find(params[:id])
-
+    @creations = Creation.order("created_at DESC").limit(5)
+    rids = Creation.find( :all, :select => 'id' ).map( &:id )
+    @random = Creation.find( (1..5).map { rids.delete_at( rids.size * rand ) } )
+    @users = User.order("created_at DESC").limit(5)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @creation }
@@ -58,7 +67,6 @@ class CreationsController < ApplicationController
   # PUT /creations/1.xml
   def update
     @creation = Creation.find(params[:id])
-
     respond_to do |format|
       if @creation.update_attributes(params[:creation])
         format.html { redirect_to(@creation, :notice => 'Creation was successfully updated.') }
@@ -81,4 +89,9 @@ class CreationsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def fetch_post
+    @post = Creation.find(params[:id])
+  end
+
 end

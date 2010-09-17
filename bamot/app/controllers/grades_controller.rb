@@ -1,4 +1,7 @@
 class GradesController < ApplicationController
+
+  before_filter :admin, :except => [:index, :show]
+
   # GET /grades
   # GET /grades.xml
   def index

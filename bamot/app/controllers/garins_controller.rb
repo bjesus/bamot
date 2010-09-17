@@ -1,9 +1,12 @@
 class GarinsController < ApplicationController
+
+  before_filter :admin, :except => [:index, :show]
+
   # GET /garins
   # GET /garins.xml
   def index
     @garins = Garin.all
-
+    puts cookies
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @garins }
