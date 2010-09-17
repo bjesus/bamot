@@ -67,19 +67,5 @@
   %div.span-12.last
     %h3
       %span להורדת הגיליון הקודם:
-      %span.title ביטול המשפחה
-  %div.span-4
-    %h3.line דברים אקראיים
-    %ol
-      - @random.each do |creation|
-        %li= creation.name+" / "+creation.user.firstname+" "+creation.user.lastname
-  %div.span-4
-    %h3.line הצטרפו לאחרונה
-    %ol
-      - @users.each do |user|
-        %li= user.firstname+" "+user.lastname+" / "+user.garin.name
-  %div.span-4.last
-    %h3.line יצירות אחרונות
-    %ol
-      - @creations.each do |creation|
-        %li= creation.name+" / "+creation.user.firstname+" "+creation.user.lastname
+      %span.title עוד לא...
+  = render :partial => "moreworks"
