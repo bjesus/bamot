@@ -1,54 +1,69 @@
 %div.span-12
-  %div.span-6
-    %h3!=@textgallery[1].name + "<sub> / "+@textgallery[1].user.firstname+" "+@textgallery[1].user.lastname+"</sub>"
+  %div.span-6.click-div
+    %h3
+      =link_to(@textgallery[1].name, "/creations/"+@textgallery[1].friendly_id)
+      %sub!= @textgallery[1].user.display_name
     %p
       :textile
         #{@textgallery[1].summary}
-  %div.span-6.last
-    %h3!=@photosgallery[0].name + "<sub> / "+@photosgallery[0].user.firstname+" "+@photosgallery[0].user.lastname+"</sub>"
+  %div.span-6.last.click-div
+    %h3
+      =link_to(@photosgallery[0].name, "/creations/"+@photosgallery[0].friendly_id)
+      %sub!= @photosgallery[0].user.display_name
     = image_tag(@photosgallery[0].image.url(:medium), {'class'=>'fp-thumb'})
-  %div.span-6
-    %h3!=@photosgallery[1].name + "<sub> / "+@photosgallery[1].user.firstname+" "+@photosgallery[1].user.lastname+"</sub>"
+  %div.span-6.click-div
+    %h3
+      =link_to(@photosgallery[1].name, "/creations/"+@photosgallery[1].friendly_id)
+      %sub!= @photosgallery[1].user.display_name
     = image_tag(@photosgallery[1].image.url(:medium), {'class'=>'fp-thumb'})
-  %div.span-6.last
-    %h3!=@textgallery[0].name + "<sub> / "+@textgallery[0].user.firstname+" "+@textgallery[0].user.lastname+"</sub>"
+  %div.span-6.last.click-div
+    %h3
+      =link_to(@textgallery[0].name, "/creations/"+@textgallery[0].friendly_id)
+      %sub!= @textgallery[0].user.display_name
     %p
       :textile
         #{@textgallery[0].summary}
   %div.span-12.last
-    %p.more.space הצג את כל יצירות הנושא החודשי >>
-  %div.span-6
-    %h3!=@news[0].name + "<sub> / "+@news[0].user.firstname+" "+@news[0].user.lastname+"</sub>"
+    %p.more.space= link_to('הצג את כל יצירות הנושא החודשי >>', "/topics/"+@topic.friendly_id)
+  %div.span-6.click-div
+    %h3
+      =link_to(@news[0].name, "/creations/"+@news[0].friendly_id)
+      %sub!= @news[0].user.display_name
     %p
       :textile
         #{@news[0].summary}
-  %div.span-6.last
-    %h3!=@news[1].name + "<sub> / "+@news[1].user.firstname+" "+@news[1].user.lastname+"</sub>"
+  %div.span-6.last.click-div
+    %h3
+      =link_to(@news[1].name, "/creations/"+@news[1].friendly_id)
+      %sub!= @news[1].user.display_name
     %p
       :textile
         #{@news[1].summary}
   %div.span-12.last
-    %p.more הצג את כל יצירות האקטואליה >>
+    %p.more= link_to('הצג את כל יצירות האקטואליה >>', "/news")
 %div.span-12.last
-  %div.span-3.red.topic-box
-    %h4 ניו-מדיה (6)
+  %div.span-3.red.topic-box.click-div
+    = link_to('', '/kinds/'+@kinds[3].friendly_id)
+    %h4= @kinds[3].name+" ("+@kinds[3].creations.count.to_s+")"
     %span וידאו, מוסיקה
-  %div.span-3.blue.topic-box
-    %h4 כתיבהיוצרת (22)
+  %div.span-3.blue.topic-box.click-div
+    = link_to('', '/kinds/'+@kinds[2].friendly_id)
+    %h4= @kinds[2].name+" ("+@kinds[2].creations.count.to_s+")"
     %span שירה, סיפורת, בובר
-  %div.span-3.green.topic-box
-    %h4 ויז'ואל ארט (19)
+  %div.span-3.green.topic-box.click-div
+    = link_to('', '/kinds/'+@kinds[1].friendly_id)
+    %h4= @kinds[1].name+" ("+@kinds[1].creations.count.to_s+")"
     %span צילום, ציור, פיסול
-  %div.span-3.last.yellow.topic-box.space
-    %h4 דעה (12)
+  %div.span-3.last.yellow.topic-box.space.click-div
+    = link_to('', '/kinds/'+@kinds[0].friendly_id)
+    %h4= @kinds[0].name+" ("+@kinds[0].creations.count.to_s+")"
     %span מסות, כתבות
-  %span(style="float:left; top: 20px; position: relative;") בחודש הבא: <span style='font-weight: bold;color: #117f53;'>ביטול העבודה</span>
+  %span(style="float:left; top: 20px; position: relative;") בחודש הבא: <span style='font-weight: bold; color: #117f53;'>ביטול העבודה</span>
   %h2
     %span החודש:
-    %span.title ביטול הזוגיות
-  %p דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים.
-  %p דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים.
-  %p.space בגיליון הבא שלנו נדבר קצת על ביטול העבודה. אנחנו ממליצים לקרוא קצת את הקטע של בובר בנושא, וגם הקטע המכונן של אביהו מדינה. בכלל, שווה לנסות להתעסק בשאלה - מה זה בעצם ביטול העבודה? למה עבודה, ולמה לבטל הכל? דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. דג קטן הלך לטיול ופגש שם דגים רבים אחרים. כל זאת ועוד - בגיליון הבא!
+    %span.title=@topic.name
+  :textile
+    #{@topic.description}
   %div.span-12.last
     %h3
       %span להורדת הגיליון הקודם:
@@ -56,11 +71,8 @@
   %div.span-4
     %h3.line דברים אקראיים
     %ol
-      %li בולבולים / גילי אולשר
-      %li המלחמה והתחת / אהרן אמיר
-      %li ללא שם / יצחק שמטוב
-      %li אני והחברה / דונלד דאק
-      %li זוג או פרד / שמחה רבה
+      - @random.each do |creation|
+        %li= creation.name+" / "+creation.user.firstname+" "+creation.user.lastname
   %div.span-4
     %h3.line הצטרפו לאחרונה
     %ol
