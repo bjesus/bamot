@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   attr_accessible :firstname, :lastname, :garin_id, :phone, :email, :password, :password_confirmation, :remember_me
 
   def display_name
-    ' / <a href="/users/'+ urlname + '">' + firstname + " " + lastname+'</a>'
+    ' / <a href="/users/'+ urlname + '">' + fullname + '</a>'
   end
 
   def urlname
@@ -22,5 +22,9 @@ class User < ActiveRecord::Base
 
   def english
     (firstname+" "+lastname).to_url
+  end
+
+  def fullname
+    firstname + " " + lastname
   end
 end
