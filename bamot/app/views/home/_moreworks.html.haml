@@ -1,0 +1,15 @@
+%div.span-4
+  %h3.line דברים אקראיים
+  %ol
+    - @random.each do |creation|
+      %li= link_to(creation.name, '/creations/'+creation.friendly_id)+" / "+link_to(creation.user.fullname, "/users/"+creation.user.friendly_id)
+%div.span-4
+  %h3.line הצטרפו לאחרונה
+  %ol
+    - @users.each do |user|
+      %li= link_to(user.fullname, "/users/"+user.friendly_id)+" / "+user.garin.name
+%div.span-4.last
+  %h3.line יצירות אחרונות
+  %ol
+    - @creations.each do |creation|
+      %li= link_to(creation.name, '/creations/'+creation.friendly_id)+" / "+link_to(creation.user.fullname, "/users/"+creation.user.friendly_id)
