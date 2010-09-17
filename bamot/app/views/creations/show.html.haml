@@ -1,0 +1,40 @@
+%div.span-14
+  %h3!= @creation.name + "<sub> / "+@creation.user.firstname+" "+@creation.user.lastname+"</sub>"
+  = image_tag @creation.image.url(:large)
+
+  %p
+    :maruku
+      #{@creation.content}
+%div.span-10.last
+%div.span-24.last
+  %p(style="text-align:center;margin-top:15em;") התפרסם ב-7 במאי 2010, קצ"ט בחשוון ב' ה'תשע"ע #{"<br/>"} אדם סמית', גרעין בהקיץ, שכבת ש"ד. 054-9746949
+  %p(style="text-align:center") << קטע קודם של אדם | קטע אחר של אדם | קטע הבא של אדם >> #{"<br/>"} << קטע קודם באתר | קטע אחר באתר | קטע הבא באתר >>
+
+%div.span-24.last
+  %div.span-6
+    %p
+  %div.span-4
+    %h3 דברים אקראיים
+    %ol
+      %li בולבולים / גילי אולשר
+      %li המלחמה והתחת / אהרן אמיר
+      %li ללא שם / יצחק שמטוב
+      %li אני והחברה / דונלד דאק
+      %li זוג או פרד / שמחה רבה
+  %div.span-4
+    %h3 הצטרפו לאחרונה
+    %ol
+      %li דב ובר / במחולות
+      %li אמיר פיי גוטמן / פייב
+      %li תום תום / קלאב
+      %li סיבה טובה / בעליל
+      %li עדי צורגיל / בלי גרעין
+  %div.span-4.last
+    %h3 יצירות אחרונות
+    %ol
+      %li בולבולים / מעין בן דוד
+      %li המלחמה והתחת / אהרן אמיר
+      %li ללא שם / יצחק שמטוב
+      %li אני והחברה / דונלד דאק
+      %li זוג או פרד / שמחה רבה
+%div.span-6.last
