@@ -1,0 +1,11 @@
+%div.span-20
+  - @news.each do |creation|
+    .creation
+      %h3
+        = link_to(creation.name, "/creations/"+creation.friendly_id)
+        %sub!= creation.user.display_name
+      .creation-summary
+        - if creation.image?
+          = image_tag(creation.image.url(:medium), {'style'=>'-webkit-box-shadow: black 0px 0px 1px;'})
+        :textile
+          #{creation.summary}
