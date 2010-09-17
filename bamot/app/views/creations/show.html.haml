@@ -1,13 +1,19 @@
-%div.span-14
-  %h3!= @creation.name + "<sub> / "+@creation.user.firstname+" "+@creation.user.lastname+"</sub>"
-  = image_tag @creation.image.url(:large)
+%div.span-24.last(style="text-align: center;")
+  %h3
+    =@creation.name
+    %sub!= @creation.user.display_name
+  - if @creation.image?
+    = image_tag @creation.image.url(:large)
 
-  %p
-    :maruku
-      #{@creation.content}
+  .span-14(style="text-align: right;")
+    %p
+      :maruku
+        #{@creation.content}
 %div.span-10.last
 %div.span-24.last
-  %p(style="text-align:center;margin-top:15em;") התפרסם ב-7 במאי 2010, קצ"ט בחשוון ב' ה'תשע"ע #{"<br/>"} אדם סמית', גרעין בהקיץ, שכבת ש"ד. 054-9746949
+  %p(style="text-align:center;margin-top:15em;")
+    = "התפרסם ב-"+l(@creation.created_at, :format => :full_date)+", לפני "+time_ago_in_words(@creation.created_at)
+    != "<br/>"+@creation.user.firstname+" "+@creation.user.lastname+", גרעין "+@creation.user.garin.name+", שכבת "+@creation.user.garin.grade.name+". "+@creation.user.phone
   %p(style="text-align:center") << קטע קודם של אדם | קטע אחר של אדם | קטע הבא של אדם >> #{"<br/>"} << קטע קודם באתר | קטע אחר באתר | קטע הבא באתר >>
 
 %div.span-24.last
