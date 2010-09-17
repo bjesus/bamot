@@ -7,40 +7,21 @@
 
   .span-14(style="text-align: right;")
     %p
-      :maruku
+      :textile
         #{@creation.content}
 %div.span-10.last
 %div.span-24.last
+  %p
+    - if @creation.user == current_user
+      = link_to('עריכה', edit_creation_path(@creation))
+      = link_to('מחיקה', @creation, :confirm => 'בטוחים שברצונכם למחוק את היצירה?', :method => :delete)
   %p(style="text-align:center;margin-top:15em;")
     = "התפרסם ב-"+l(@creation.created_at, :format => :full_date)+", לפני "+time_ago_in_words(@creation.created_at)
     != "<br/>"+@creation.user.firstname+" "+@creation.user.lastname+", גרעין "+@creation.user.garin.name+", שכבת "+@creation.user.garin.grade.name+". "+@creation.user.phone
-  %p(style="text-align:center") << קטע קודם של אדם | קטע אחר של אדם | קטע הבא של אדם >> #{"<br/>"} << קטע קודם באתר | קטע אחר באתר | קטע הבא באתר >>
+  %p(style="text-align:center") << קטע קודם של אדם | קטע אחר של אדם | קטע הבא של אדם >> <br/> << קטע קודם באתר | קטע אחר באתר | קטע הבא באתר >>
 
 %div.span-24.last
   %div.span-6
     %p
-  %div.span-4
-    %h3 דברים אקראיים
-    %ol
-      %li בולבולים / גילי אולשר
-      %li המלחמה והתחת / אהרן אמיר
-      %li ללא שם / יצחק שמטוב
-      %li אני והחברה / דונלד דאק
-      %li זוג או פרד / שמחה רבה
-  %div.span-4
-    %h3 הצטרפו לאחרונה
-    %ol
-      %li דב ובר / במחולות
-      %li אמיר פיי גוטמן / פייב
-      %li תום תום / קלאב
-      %li סיבה טובה / בעליל
-      %li עדי צורגיל / בלי גרעין
-  %div.span-4.last
-    %h3 יצירות אחרונות
-    %ol
-      %li בולבולים / מעין בן דוד
-      %li המלחמה והתחת / אהרן אמיר
-      %li ללא שם / יצחק שמטוב
-      %li אני והחברה / דונלד דאק
-      %li זוג או פרד / שמחה רבה
+  = render :partial => "home/moreworks"
 %div.span-6.last
