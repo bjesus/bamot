@@ -7,7 +7,7 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
     %script(type="text/javascript"
-            src="/javascripts/jquery-1.4.2-min.js")
+            src="/javascripts/jquery-1.4.2.min.js")
     %link(rel="stylesheet"
           href="/css/screen.css"
           type="text/css")
@@ -30,6 +30,7 @@
             %li(style="float: left;")
               - if user_signed_in?
                 %span= "מחובר כ"+current_user.firstname+" | "
+                %span= link_to('הדפשלי', '/users/'+current_user.friendly_id)+" | "
                 %span
                   = link_to('ניתוק', destroy_user_session_path)
 
@@ -47,4 +48,7 @@
         = yield
       #footer
         %span מערכת במות היא תוכנה חופשית ומומלצת לצפייה בדפדפן חופשי
-        %span= link_to "View List of Users", users_path
+    :javascript
+       $('div.click-div').click(function () {
+         window.location = $(this).find('a:first').attr('href');
+       });
