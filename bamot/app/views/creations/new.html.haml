@@ -47,8 +47,7 @@
           %br
           %h3 הוספת קובץ
           = f.file_field :image
-          %input(type="submit" value="הוסף את היצירה שלי!" style="font-size: 150%; margin: 2em;")
-          = f.submit
+          = f.submit("הוסף את היצירה שלי!", {'style'=>'font-size: 150%; margin: 2em;'})
   .span-6.last
     %p
       :textile
