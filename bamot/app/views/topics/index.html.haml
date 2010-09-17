@@ -1,0 +1,10 @@
+.span-18
+- if @topics.count > 1
+  - @topics.each do |topic|
+    %h2= link_to(topic.name, "/topics/"+topic.friendly_id)
+    .moreover
+      :textile
+        #{topic.description}
+- else
+.span-14
+  %p אין עדיין גיליונות קודמים להציג...
