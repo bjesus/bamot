@@ -1,12 +1,7 @@
-Bamot will be a RubyOnRails CMS for sharing all kinds of art.
+Bamot is a RubyOnRails CMS for sharing all kinds of art.
   it will include an automatic system for generating a newspaper
   out of the content it has.
 
 Development is currently Hebrew only.
 
-
-Not much to see yet.
-We're starting with HTML5&CSS3&JS design, and you'll need Haml to generate the html and css files.
-
-Get it from here:
-  http://haml-lang.com/
+Using Rails 3, Haml, FriendlyID, Devise, PaperClip, Maruku
