@@ -85,7 +85,7 @@ class CreationsController < ApplicationController
     @creation.destroy
 
     respond_to do |format|
-      format.html { redirect_to(creations_url) }
+      format.html { redirect_to("/") }
       format.xml  { head :ok }
     end
   end
