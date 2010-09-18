@@ -3,16 +3,16 @@
   %head
     %meta(content="text/html; charset=UTF-8"
           http-equiv="content-type")
+    %script(type="text/javascript"
+            src="/javascripts/jquery-1.4.2.min.js")
     = stylesheet_link_tag :all
     = javascript_include_tag :defaults
     = csrf_meta_tag
-    %script(type="text/javascript"
-            src="/javascripts/jquery-1.4.2.min.js")
     %link(rel="stylesheet"
           href="/css/screen.css"
           type="text/css")
     %link(rel="stylesheet"
-          href="/css/style.css"
+          href="/stylesheets/style.css"
           type="text/css")
     %title דוור
   %body
@@ -27,7 +27,7 @@
             %li= link_to("גליונות קודמים", "/topics")
             %li= link_to("חיפוש", "/search")
             %li= link_to("מה זה בכלל", "/about")
-            %li(style="float: left;")
+            %li(class="left-nav")
               - if user_signed_in?
                 %span= "מחובר כ"+current_user.firstname+" | "
                 %span= link_to('הדפשלי', '/users/'+current_user.friendly_id)+" | "
