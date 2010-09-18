@@ -3,7 +3,7 @@
     =@creation.name
     %sub!= @creation.user.display_name
   - if @creation.image?
-    = image_tag @creation.image.url(:large)
+    = image_tag(@creation.image.url(:large), {'class'=>"large-photo"})
 
   .span-14(style="text-align: right;")
     %p
@@ -18,7 +18,7 @@
   %p(style="text-align:center;margin-top:15em;")
     = "התפרסם ב-"+l(@creation.created_at, :format => :full_date)+", לפני "+time_ago_in_words(@creation.created_at)
     != "<br/>"+@creation.user.firstname+" "+@creation.user.lastname+", גרעין "+@creation.user.garin.name+", שכבת "+@creation.user.garin.grade.name+". "+@creation.user.phone
-  %p(style="text-align:center") << קטע קודם של אדם | קטע אחר של אדם | קטע הבא של אדם >> <br/> << קטע קודם באתר | קטע אחר באתר | קטע הבא באתר >>
+  -# %p(style="text-align:center") << קטע קודם של אדם | קטע אחר של אדם | קטע הבא של אדם >> <br/> << קטע קודם באתר | קטע אחר באתר | קטע הבא באתר >>
 
 %div.span-24.last
   %div.span-6

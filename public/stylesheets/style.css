@@ -1,3 +1,33 @@
+#nav a {
+  background: black;
+  color: grey;
+  font-weight: bold; }
+
+#nav a:hover {
+  color: white; }
+
+#nav li.left-nav a {
+  color: white; }
+
+#nav li.left-nav {
+  float: left; }
+
+a, a:visited {
+  text-decoration: none;
+  color: #222222; }
+
+a:hover {
+  color: black;
+  background-color: transparent;
+  text-shadow: #777777 0px 0px 1px; }
+
+.click-div {
+  cursor: hand; }
+
+.large-photo {
+  -moz-box-shadow: black 0px 0px 3px;
+  -webkit-box-shadow: black 0px 0px 3px; }
+
 body {
   font-family: arial;
   background-color: #80113e;
