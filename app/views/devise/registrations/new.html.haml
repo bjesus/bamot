@@ -1,7 +1,7 @@
 %div.span-18
   - form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
     %h2 הרשמה לאתר
-    %span= devise_error_messages!
+
     %div.span-9
       %h3 טלפון <sub> (כל הטלפון, לא רק סיומת) </sub>
       = f.text_field(:phone, {'placeholder'=>'9732384', 'style'=>'width:90px'})
