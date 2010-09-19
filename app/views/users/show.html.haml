@@ -1,8 +1,8 @@
 %div.span-20
-  %span(style='float:left; margin-left: 1em;')="טלפון: "+@user.phone
+  %span(style='float:left; margin-left: 1em;')="טלפון: "+@user.phoneext+"-"+@user.phone
   %h2
     = @user.firstname + " "+ @user.lastname
-    %sub= @user.garin.name + ", " + @user.garin.grade.name
+    %sub= link_to(@user.garin.name, "/garins/"+@user.garin.friendly_id) + ", " + @user.garin.grade.name
 
   - @user.creations.order("created_at DESC").each do |creation|
     .creation.space
