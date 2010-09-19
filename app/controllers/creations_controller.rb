@@ -4,6 +4,7 @@ class CreationsController < ApplicationController
   before_filter :fetch_post, :only => [:edit, :update, :destroy]
   before_filter :authorise, :only => [:edit, :update, :destroy]
   before_filter :admin, :only => [:index]
+  before_filter :set_locale
 
   # GET /creations
   # GET /creations.xml
@@ -54,7 +55,7 @@ class CreationsController < ApplicationController
 
     respond_to do |format|
       if @creation.save
-        format.html { redirect_to(@creation, :notice => 'Creation was successfully created.') }
+        format.html { redirect_to(@creation, :notice => 'היצירה שלכם באתר. מבדיקה מהירה נראה שהיא נהדרת.') }
         format.xml  { render :xml => @creation, :status => :created, :location => @creation }
       else
         format.html { render :action => "new" }
@@ -69,7 +70,7 @@ class CreationsController < ApplicationController
     @creation = Creation.find(params[:id])
     respond_to do |format|
       if @creation.update_attributes(params[:creation])
-        format.html { redirect_to(@creation, :notice => 'Creation was successfully updated.') }
+        format.html { redirect_to(@creation, :notice => 'היצירה שלכם עודכנה.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
