@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(:version => 20100917125638) do
     t.string   "last_sign_in_ip"
     t.string   "firstname"
     t.string   "lastname"
+    t.string   "phoneext"
     t.string   "phone"
     t.integer  "garin_id"
     t.datetime "created_at"

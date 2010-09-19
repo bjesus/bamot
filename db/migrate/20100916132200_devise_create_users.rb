@@ -12,6 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :firstname
       t.string :lastname
       t.string :phone
+      t.string :phoneext
       t.integer :garin_id
       t.timestamps
     end
