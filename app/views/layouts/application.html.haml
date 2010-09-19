@@ -14,11 +14,11 @@
     %link(rel="stylesheet"
           href="/stylesheets/style.css"
           type="text/css")
-    %title דוור
+    %title הדוור הטוב
   %body
     #page
       #topbar
-        %span.logo דוור
+        %span.logo הדוור הטוב
         %span מערכת מזמינה לשיחה
         #nav
           %ul
@@ -36,8 +36,6 @@
 
               - else
                 %span= link_to 'הרשמה', new_user_registration_path
-                %span
-                  = link_to('התחברות', new_user_session_path)
       #content
         - if flash[:notice]
           #notice
