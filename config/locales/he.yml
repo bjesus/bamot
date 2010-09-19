@@ -1,7 +1,7 @@
 # Hebrew translations for Ruby on Rails
 # by Dotan Nahum (dipidi@gmail.com)
 
-"he":
+he:
   date:
     formats:
       default: "%Y-%m-%d"
@@ -78,18 +78,33 @@
         precision: 2
         format: '%u %n'
 
-  active_record:
-    error:
-      header_message: ["לא ניתן לשמור {{model}}: שגיאה אחת", "לא ניתן לשמור {{model}}: {{count}} שגיאות."]
+  activerecord:
+    models:
+      user: "משתמש"
+      creation: "יצירה"
+    attributes:
+      user:
+        firstname: "שם פרטי"
+        lastname: "שם משפחה"
+        phone: "טלפון"
+        phoneext: "קידומת טלפון"
+        email: "דואר אלקטרוני"
+        password: "סיסמה"
+
+  errors:
+    template:
       message: "אנא בדוק את השדות הבאים:"
-    error_messages:
+      header:
+        one: "יש שגיאה אחת במילוי הטופס"
+        other: "יש {{count}} שגיאות במילוי הטופס"
+    messages:
       inclusion: "לא נכלל ברשימה"
       exclusion: "לא זמין"
       invalid: "לא ולידי"
       confirmation: "לא תואם לאישורו"
       accepted: "חייב באישור"
-      empty: "חייב להכלל"
-      blank: "חייב להכלל"
+      empty: "הוא שדה חובה"
+      blank: "הוא שדה חובה"
       too_long: "יותר מדי ארוך (לא יותר מ- {{count}} תוים)"
       too_short: "יותר מדי קצר (לא יותר מ- {{count}} תוים)"
       wrong_length: "לא באורך הנכון (חייב להיות {{count}} תוים)"
@@ -102,3 +117,12 @@
       less_than_or_equal_to: "חייב להיות קטן או שווה ל- {{count}}"
       odd: "חייב להיות אי זוגי"
       even: "חייב להיות זוגי"
+
+
+  activemodel:
+    errors:
+      template:
+        header:
+          one:    "שגיאה אחת מנעה מהטופס להשלח"
+          other:  "{{count}} שגיאות מנעו מהטופס להשלח"
+        body: "היו כמה בעיות במילוי הטופס"
