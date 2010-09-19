@@ -1,11 +1,11 @@
 %div.span-20
-  %span(style='float:left;')="טלפון: "+@user.phone
+  %span(style='float:left; margin-left: 1em;')="טלפון: "+@user.phone
   %h2
     = @user.firstname + " "+ @user.lastname
     %sub= @user.garin.name + ", " + @user.garin.grade.name
 
   - @user.creations.order("created_at DESC").each do |creation|
-    .creation
+    .creation.space
       %h3
         = link_to(creation.name, "/creations/"+creation.friendly_id)
       .creation-summary
