@@ -16,4 +16,10 @@ class ApplicationController < ActionController::Base
       redirect_to "/"
     end
   end
+
+  def set_locale
+    # if params[:locale] is nil then I18n.default_locale will be used
+    I18n.locale = 'he'
+  end
+
 end
