@@ -1,6 +1,6 @@
 - form_for(@creation, :html => { :multipart => true }) do |f|
   .span-18
-    %h2 העלאת יצירה לאתר
+    %h2 עריכה יצירה באתר
     - if @creation.errors.any?
       #error_explanation
         %h2= pluralize(@creation.errors.count, "שגיאה")+" מנעו מהיצירה שלכם להשמר:"

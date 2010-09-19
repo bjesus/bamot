@@ -21,6 +21,9 @@
       = collection_select(:user, :garin_id, Garin.all, :id, :name )
       %h3 דואר אלקטרוני <sub> (לא לשכוח שטרודל) </sub>
       = f.text_field(:email, {'placeholder'=>'tusik@gmail.com'})
+      %h3 קוד גישה
+      = f.text_field(:code, {'placeholder'=>'כמו בגשש בלש'})
+
 
 %div.span-6.last
   %p
