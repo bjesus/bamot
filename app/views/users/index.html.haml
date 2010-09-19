@@ -1,0 +1,10 @@
+%div.span-20
+  - @garinim.each do |garin|
+    %h2
+      = garin.name
+      %sub= garin.grade.name
+
+    - garin.users.each do |user|
+      .creation.space
+        %h3
+          = link_to(user.fullname, "/users/"+user.friendly_id)
