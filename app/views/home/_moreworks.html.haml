@@ -8,6 +8,7 @@
   %ol
     - @users.each do |user|
       %li= link_to(user.fullname, "/users/"+user.friendly_id)+" / "+user.garin.name
+    %li= link_to("תראה לי את כולם", "/users/")
 %div.span-4.last
   %h3.line יצירות אחרונות
   %ol
