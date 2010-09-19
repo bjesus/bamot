@@ -6,8 +6,8 @@
       :textile
         #{@kind.content}
   - @kind.creations.each do |creation|
-    %div.span-6
-      %h3
+    %div.span-6.space
+      %h3(class="farline")
         =link_to(creation.name, "/creations/"+creation.friendly_id)
         %sub!= creation.user.display_name
       %p
