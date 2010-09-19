@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class CreationsController < ApplicationController
 
   before_filter :authenticate_user!
@@ -24,7 +26,7 @@ class CreationsController < ApplicationController
     @creations = Creation.order("created_at DESC").limit(5)
     rids = Creation.find( :all, :select => 'id' ).map( &:id )
     @random = Creation.find( (1..5).map { rids.delete_at( rids.size * rand ) } )
-    @users = User.order("created_at DESC").limit(5)
+    @users = User.order("created_at DESC").limit(4)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @creation }
@@ -55,7 +57,7 @@ class CreationsController < ApplicationController
 
     respond_to do |format|
       if @creation.save
-        format.html { redirect_to(@creation, :notice => 'היצירה שלכם באתר. מבדיקה מהירה נראה שהיא נהדרת.') }
+        format.html { redirect_to(@creation, :notice => "היצירה שלכם נוספה לאתר. ממבט ראשון היא נראית נהדרת!") }
         format.xml  { render :xml => @creation, :status => :created, :location => @creation }
       else
         format.html { render :action => "new" }
@@ -70,7 +72,7 @@ class CreationsController < ApplicationController
     @creation = Creation.find(params[:id])
     respond_to do |format|
       if @creation.update_attributes(params[:creation])
-        format.html { redirect_to(@creation, :notice => 'היצירה שלכם עודכנה.') }
+        format.html { redirect_to(@creation, :notice => 'היצירה שלכם עודכנה. יופי') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -86,7 +88,7 @@ class CreationsController < ApplicationController
     @creation.destroy
 
     respond_to do |format|
-      format.html { redirect_to("/") }
+      format.html { redirect_to("/", :notice => "לא יודע למה החלטתם לעשות את זה, אבל שתדעו שהיצירה שלכם נמחקה מהאתר...") }
       format.xml  { head :ok }
     end
   end

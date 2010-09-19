@@ -1,10 +1,11 @@
+# coding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def admin
     unless current_user.email=="bjesus@gmail.com"
       #You don't belong here. Go away.
-      flash[:notice] = "YOU SHOULDN'T BE HERE"
+      flash[:notice] = "המממ... מה אתם מחפשים?"
       redirect_to "/"
     end
   end
@@ -12,7 +13,7 @@ class ApplicationController < ActionController::Base
   def authorise
     unless @post.user == current_user || current_user.email=="bjesus@gmail.com"
       #You don't belong here. Go away.
-      flash[:notice] = "ACCESS DENIED"
+      flash[:notice] = "אין לכם הרשאה לדף ההוא. אל תנסו"
       redirect_to "/"
     end
   end
