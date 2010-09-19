@@ -4,7 +4,8 @@
   font-weight: bold; }
 
 #nav a:hover {
-  color: white; }
+  color: white;
+  text-shadow: white 0px 0px 5px; }
 
 #nav li.left-nav a {
   color: white; }
@@ -31,15 +32,21 @@ a:hover {
 body {
   font-family: arial;
   background-color: #80113e;
+  background-image: url(/images/bg.png);
   margin-top: 0.5em; }
 
 #page {
-  margin: 0 auto;
+  margin: 1em auto;
   padding: 0;
   width: 960px;
-  background-color: white;
+  background: white;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.17, #f5f5f5), color-stop(0.34, #ededed), color-stop(0.84, #fafafa));
+  background-image: -moz-linear-gradient(center bottom, #f5f5f5 17%, #ededed 34%, #fafafa 84%);
+  background-image: url(/images/white.png);
   border: 3px solid black;
-  border-radius: 10px; }
+  border-radius: 10px;
+  -moz-box-shadow: black 0px 0px 10px;
+  -webkit-box-shadow: black 0px 0px 10px; }
 
 #topbar, #nav li {
   background: black;
@@ -65,6 +72,13 @@ h2 {
 h3.line {
   border-bottom: lightgrey solid 1px; }
 
+h3.farline {
+  padding-bottom: 5px;
+  border-bottom: lightgrey solid 1px; }
+
+h3.farline:hover {
+  border-bottom: #80113e solid 1px; }
+
 #footer {
   background: black;
   color: grey;
@@ -85,10 +99,6 @@ h3.line {
 
 ol {
   font-size: 80%; }
-
-#nav li:hover {
-  color: white;
-  text-shadow: white 0px 0px 5px; }
 
 img.fp-thumb {
   width: 200px;
@@ -145,3 +155,14 @@ img.fp-thumb {
   padding-left: 1em;
   font-weight: bold;
   color: #80113e; }
+
+#notice, #error {
+  text-align: center; }
+
+.field_with_errors {
+  padding: 0;
+  display: inline;
+  background-color: transparent; }
+
+.field_with_errors input {
+  border: red solid 2px; }
