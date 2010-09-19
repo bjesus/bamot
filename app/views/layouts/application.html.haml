@@ -45,6 +45,9 @@
         - if flash[:error]
           #error
             %p= flash[:error]
+        - if flash[:alert]
+          #notice
+            %p= flash[:alert]
         = yield
       #footer
         %span מערכת במות היא תוכנה חופשית ומומלצת לצפייה בדפדפן חופשי
