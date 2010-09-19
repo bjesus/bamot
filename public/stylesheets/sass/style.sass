@@ -42,7 +42,9 @@ body
   margin: 0 auto
   padding: 0
   width: 960px
-  background-color: white
+  background: white
+  background-image: -webkit-gradient(    linear,    left bottom,    left top,    color-stop(0.17, rgb(245,245,245)),    color-stop(0.34, rgb(237,237,237)),    color-stop(0.84, rgb(250,250,250)))
+  background-image: -moz-linear-gradient(    center bottom,    rgb(245,245,245) 17%,    rgb(237,237,237) 34%,    rgb(250,250,250) 84%)
   border: 3px solid black
   border-radius: 10px
 
@@ -68,6 +70,10 @@ h2
   border-bottom: lightgrey solid 1px
 
 h3.line
+  border-bottom: lightgrey solid 1px
+
+h3.farline
+  padding-bottom: 5px
   border-bottom: lightgrey solid 1px
 
 #footer
@@ -150,3 +156,14 @@ img.fp-thumb
   padding-left: 1em
   font-weight: bold
   color: $base
+
+#notice, #error
+  text-align: center
+
+.field_with_errors
+  padding: 0
+  display: inline
+  background-color: transparent
+
+.field_with_errors input
+  border: red solid 2px
