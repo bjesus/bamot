@@ -5,8 +5,7 @@ class Creation < ActiveRecord::Base
   belongs_to :user
   has_many :extfiles
   validates_presence_of :kind_id, :name, :user_id
-  has_attached_file :image, :path => "/:rails_root/public/:attachment/:id/:style.:extension",
-  :url => "/:attachment/:id/:style.:extension",
+  has_attached_file :image,
   :styles => {
     :little => "100x100#",
     :medium  => "200x200>",
