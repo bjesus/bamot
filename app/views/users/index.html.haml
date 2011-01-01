@@ -4,7 +4,7 @@
       = garin.name
       %sub= garin.grade.name
 
-    - garin.users.each do |user|
+    - garin.users.order('firstname').each do |user|
       .creation.space
         %h3
           = link_to(user.fullname, "/users/"+user.friendly_id)
