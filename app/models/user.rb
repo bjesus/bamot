@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   attr_accessible :firstname, :lastname, :garin_id, :code, :phone, :phoneext, :email, :password, :password_confirmation, :remember_me
 
   def display_name
-    ' / <a href="/users/'+ urlname + '">' + fullname + '</a>'
+    ' / <a href="/users/'+ friendly_id + '">' + fullname + '</a>'
   end
 
   def urlname

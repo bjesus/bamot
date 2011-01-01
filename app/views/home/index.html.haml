@@ -31,14 +31,14 @@
       %sub!= @news[1].user.display_name
     %p
       :textile
-        #{@news[0].summary}
+        #{@news[1].summary}
   %div.span-6.last.click-div
     %h3(class="farline")
       =link_to(@news[0].name, "/creations/"+@news[0].friendly_id)
       %sub!= @news[0].user.display_name
     %p
       :textile
-        #{@news[1].summary}
+        #{@news[0].summary}
   %div.span-12.last
     %p.more= link_to('הצג את כל יצירות האקטואליה >>', "/news")
 %div.span-12.last
