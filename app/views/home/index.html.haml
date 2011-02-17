@@ -58,7 +58,7 @@
     = link_to('', '/kinds/'+@kinds[0].friendly_id)
     %h4= @kinds[0].name+" ("+@kinds[0].creations.count.to_s+")"
     %span מסות, כתבות
-  %span(style="float:left; top: 20px; position: relative;") בחודש הבא: <span style='font-weight: bold; color: #117f53;'>ביטול העבודה</span>
+  %span(style="float:left; top: 20px; position: relative;") בחודש הבא: <a style='font-weight: bold; color: #117f53;' href="/topics/עירום">עירום</a>
   %h2
     %span החודש:
     %span.title=@topic.name
