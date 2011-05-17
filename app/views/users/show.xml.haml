@@ -1,0 +1,17 @@
+!!! XML
+%rss{ :version => "2.0" }
+  %channel
+    %title= @user.fullname
+    %link= @user
+    %description עדכונים מהדוור הטוב 
+    %language en-us
+    %pubDate= Time.now
+
+    - for creation in @user.creations
+      %item
+        %title= creation.name
+        %description= creation.summary
+        %link= creation
+        %guid= creation.id
+        %author= creation.user
+        %pubDate= creation.created_at 
