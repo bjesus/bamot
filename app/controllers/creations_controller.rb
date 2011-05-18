@@ -54,9 +54,10 @@ class CreationsController < ApplicationController
   # POST /creations.xml
   def create
     @creation = current_user.creations.build(params[:creation])
-
+    
     respond_to do |format|
       if @creation.save
+        Notifications.creation(@creation).deliver
         format.html { redirect_to(@creation, :notice => "היצירה שלכם נוספה לאתר. ממבט ראשון היא נראית נהדרת!") }
         format.xml  { render :xml => @creation, :status => :created, :location => @creation }
       else

@@ -28,6 +28,7 @@ gem 'mysql'
 #   gem 'webrat'
 # end
 gem "haml"
+
 gem 'maruku'
 gem 'devise'
 gem 'acts-as-taggable-on'

@@ -20,6 +20,8 @@ Bamot::Application.configure do
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.perform_deliveries = true
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin

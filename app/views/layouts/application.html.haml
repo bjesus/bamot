@@ -32,6 +32,10 @@
               - if user_signed_in?
                 %span= "מחובר כ"+current_user.firstname+" | "
                 %span= link_to('הדפשלי', '/users/'+current_user.friendly_id)+" | "
+                - if current_user.notify?
+                  %span= link_to('ביטול מנוי', '/notify')+" | "
+                - else
+                  %span= link_to('הודע לי על עדכונים', '/notify')+" | "
                 %span
                   = link_to('ניתוק', destroy_user_session_path)
 

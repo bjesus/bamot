@@ -91,6 +91,10 @@ he:
         phoneext: "קידומת טלפון"
         email: "דואר אלקטרוני"
         password: "סיסמה"
+    errors:
+      messages:
+        record_invalid: "לא ולידי"
+    
 
   errors:
     template:

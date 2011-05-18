@@ -77,4 +77,5 @@ Bamot::Application.routes.draw do
   match 'about', :to => 'home#about'
   match 'search', :to => 'home#search'
   match 'news', :to => 'home#news'
+  match 'notify', :to => 'users#notify'
 end
