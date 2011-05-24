@@ -27,6 +27,10 @@ class CreationsController < ApplicationController
     rids = Creation.find( :all, :select => 'id' ).map( &:id )
     @random = Creation.find( (1..5).map { rids.delete_at( rids.size * rand ) } )
     @users = User.order("created_at DESC").limit(4)
+    @context = 'all'
+    if params[:context]
+      @context = params[:context]
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @creation }
@@ -97,5 +101,5 @@ class CreationsController < ApplicationController
   def fetch_post
     @post = Creation.find(params[:id])
   end
-
+  
 end

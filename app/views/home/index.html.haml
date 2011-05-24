@@ -1,24 +1,24 @@
 %div.span-12
   %div.span-6.click-div.space
     %h3(class="farline")
-      =link_to(@textgallery[1].name, "/creations/"+@textgallery[1].friendly_id)
+      =link_to(@textgallery[1].name, "/creations/"+@textgallery[1].friendly_id+"?context=topic")
       %sub!= @textgallery[1].user.display_name
     %p
       :textile
         #{@textgallery[1].summary}
   %div.span-6.last.click-div.space
     %h3(class="farline")
-      =link_to(@photosgallery[0].name, "/creations/"+@photosgallery[0].friendly_id)
+      =link_to(@photosgallery[0].name, "/creations/"+@photosgallery[0].friendly_id+"?context=topic")
       %sub!= @photosgallery[0].user.display_name
     = image_tag(@photosgallery[0].image.url(:medium), {'class'=>'fp-thumb'})
   %div.span-6.click-div.space
     %h3(class="farline")
-      =link_to(@photosgallery[1].name, "/creations/"+@photosgallery[1].friendly_id)
+      =link_to(@photosgallery[1].name, "/creations/"+@photosgallery[1].friendly_id+"?context=topic")
       %sub!= @photosgallery[1].user.display_name
     = image_tag(@photosgallery[1].image.url(:medium), {'class'=>'fp-thumb'})
   %div.span-6.last.click-div.space
     %h3(class="farline")
-      =link_to(@textgallery[0].name, "/creations/"+@textgallery[0].friendly_id)
+      =link_to(@textgallery[0].name, "/creations/"+@textgallery[0].friendly_id+"?context=topic")
       %sub!= @textgallery[0].user.display_name
     %p
       :textile

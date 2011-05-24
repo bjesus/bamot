@@ -1,7 +1,24 @@
-%div.span-24.last(style="text-align: center;")
+%div.span-24.last(style="text-align: center; width: 960px;")
+  - if @creation.topic
+    #creation-topic= link_to "מתוך הנושא החודשי: "+@creation.topic.name, @creation.topic
+
   %h3
     =@creation.name
     %sub!= @creation.user.display_name
+  #image-placeholder
+    - if @context == 'all'
+      .button.previous= link_to_if @creation.backward, "<<", creation_path(@creation.backward, :context => 'all')
+      .button.next= link_to_if @creation.forward, ">>", creation_path(@creation.forward, :context => 'all')
+    - if @context == 'user'
+      .button.previous= link_to_if @creation.backward('user'), "<<", creation_path(@creation.backward('user'), :context => 'user')
+      .button.next= link_to_if @creation.forward('user'), ">>", creation_path(@creation.forward('user'), :context => 'user')
+    - if @context == 'kind'
+      .button.previous= link_to_if @creation.backward('kind'), "<<", creation_path(@creation.backward('kind'), :context => 'kind')
+      .button.next= link_to_if @creation.forward('kind'), ">>", creation_path(@creation.forward('kind'), :context => 'kind')
+    - if @context == 'topic'
+      .button.previous= link_to_if @creation.backward('topic'), "<<", creation_path(@creation.backward('topic'), :context => 'topic')
+      .button.next= link_to_if @creation.forward('topic'), ">>", creation_path(@creation.forward('topic'), :context => 'topic')
+
   - if @creation.image?
     = image_tag(@creation.image.url(:large), {'class'=>"large-photo"})
 
@@ -15,10 +32,9 @@
     - if @creation.user == current_user
       = link_to('עריכה', edit_creation_path(@creation))
       = link_to('מחיקה', @creation, :confirm => 'בטוחים שברצונכם למחוק את היצירה?', :method => :delete)
-  %p(style="text-align:center;margin-top:15em;")
+  %p(style="text-align:center;margin-top:1em;")
     = "התפרסם ב-"+l(@creation.created_at, :format => :full_date)+", לפני "+time_ago_in_words(@creation.created_at)
     != "<br/>"+@creation.user.firstname+" "+@creation.user.lastname+", גרעין "+@creation.user.garin.name+", שכבת "+@creation.user.garin.grade.name+". "+@creation.user.phoneext+"-"+@creation.user.phone
-  -# %p(style="text-align:center") << קטע קודם של אדם | קטע אחר של אדם | קטע הבא של אדם >> <br/> << קטע קודם באתר | קטע אחר באתר | קטע הבא באתר >>
 
 %div.span-24.last
   %div.span-6

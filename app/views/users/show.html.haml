@@ -7,10 +7,10 @@
   - @user.creations.order("created_at DESC").each do |creation|
     .creation.space
       %h3
-        = link_to(creation.name, "/creations/"+creation.friendly_id)
+        = link_to(creation.name, "/creations/"+creation.friendly_id+"?context=user")
       .creation-summary
         - if creation.image?
-          = link_to(image_tag(creation.image.url(:medium), {'style'=>'-webkit-box-shadow: black 0px 0px 1px;'}), "/creations/"+creation.friendly_id)
+          = link_to(image_tag(creation.image.url(:medium), {'style'=>'-webkit-box-shadow: black 0px 0px 1px;'}), "/creations/"+creation.friendly_id+"?context=user")
         :textile
           #{creation.summary}
 

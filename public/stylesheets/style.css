@@ -27,7 +27,8 @@ a:hover {
 
 .large-photo {
   -moz-box-shadow: black 0px 0px 3px;
-  -webkit-box-shadow: black 0px 0px 3px; }
+  -webkit-box-shadow: black 0px 0px 3px;
+  box-shadow: black 0px 0px 3px; }
 
 body {
   font-family: arial;
@@ -46,7 +47,8 @@ body {
   border: 3px solid black;
   border-radius: 10px;
   -moz-box-shadow: black 0px 0px 10px;
-  -webkit-box-shadow: black 0px 0px 10px; }
+  -webkit-box-shadow: black 0px 0px 10px;
+  box-shadow: black 0px 0px 10px; }
 
 #topbar, #nav li {
   background: black;
@@ -104,6 +106,7 @@ img.fp-thumb {
   width: 200px;
   -moz-box-shadow: black 0px 0px 1px;
   -webkit-box-shadow: black 0px 0px 1px;
+  box-shadow: black 0px 0px 1px;
   display: block;
   margin: auto; }
 
@@ -166,3 +169,34 @@ img.fp-thumb {
 
 .field_with_errors input {
   border: red solid 2px; }
+
+#creation-topic {
+  float: left;
+  margin-left: 1em;
+  clear: both; }
+  #creation-topic a {
+    border-radius: 5px;
+    background: rgba(92, 209, 166, 0.3);
+    padding: 2px 5px; }
+
+#creation-topic:hover a {
+  background: rgba(92, 209, 166, 0.9); }
+
+#image-placeholder .button {
+  background: rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  margin-top: 200px; }
+  #image-placeholder .button a {
+    color: white; }
+#image-placeholder .button:hover {
+  background: rgba(0, 0, 0, 0.95); }
+#image-placeholder .next {
+  float: left;
+  border-radius: 0 10px 10px 0; }
+#image-placeholder .previous {
+  float: right;
+  border-radius: 10px 0 0 10px; }

@@ -33,6 +33,7 @@ a:hover
 .large-photo
   -moz-box-shadow: #000 0px 0px 3px
   -webkit-box-shadow: #000 0px 0px 3px
+  box-shadow: #000 0px 0px 3px
 
 body
   font-family: arial
@@ -52,6 +53,7 @@ body
   border-radius: 10px
   -moz-box-shadow: #000 0px 0px 10px
   -webkit-box-shadow: #000 0px 0px 10px
+  box-shadow: #000 0px 0px 10px
 
 
 #topbar, #nav li
@@ -110,6 +112,7 @@ img.fp-thumb
   width: 200px
   -moz-box-shadow: #000 0px 0px 1px
   -webkit-box-shadow: #000 0px 0px 1px
+  box-shadow: #000 0px 0px 1px
   display: block
   margin: auto
 
@@ -172,3 +175,44 @@ img.fp-thumb
 
 .field_with_errors input
   border: red solid 2px
+  
+#creation-topic
+  float: left
+  margin-left: 1em
+  clear: both
+  
+  a
+    border-radius: 5px
+    background: rgba(92, 209, 166, .30)
+    padding: 2px 5px
+
+#creation-topic:hover
+
+  a
+    background: rgba(92, 209, 166, .90)
+
+
+#image-placeholder
+  .button 
+    background: rgba(0, 0, 0, .75)
+    color: rgba(0, 0, 0, .0)
+    width: 50px
+    height: 50px
+    line-height: 50px
+    font-weight: bold
+    margin-top: 200px
+    
+    a
+      color: white
+
+  .button:hover
+    background: rgba(0, 0, 0, .95)
+
+  .next
+    float: left  
+    border-radius: 0 10px 10px 0
+
+  .previous
+    float: right
+    border-radius: 10px 0 0 10px
+

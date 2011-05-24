@@ -15,4 +15,25 @@ class Creation < ActiveRecord::Base
   def urlname
     name.to_url
   end
+  
+  def forward(context=nil)
+    pool = case context
+      when 'topic' then self.topic.creations.order("created_at").split self
+      when 'kind' then self.kind.creations.order("created_at").split self
+      when 'user' then self.user.creations.order("created_at").split self
+      else Creation.order("created_at").all.split self
+    end
+    @creation = pool[1][0]
+  end
+
+  def backward(context=nil)
+    pool = case context
+      when 'topic' then self.topic.creations.order("created_at").split self
+      when 'kind' then self.kind.creations.order("created_at").split self
+      when 'user' then self.user.creations.order("created_at").split self
+      else Creation.order("created_at").all.split self
+    end
+    @creation = pool[0][-1]
+  end
+  
 end
