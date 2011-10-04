@@ -17,6 +17,7 @@ Bamot::Application.routes.draw do
   #  get "home/index"
   root :to => "home#index"
 
+  match "creations/:id/comment" => "creations#comment"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

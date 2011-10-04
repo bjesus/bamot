@@ -102,4 +102,9 @@ class CreationsController < ApplicationController
     @post = Creation.find(params[:id])
   end
   
+  def comment
+    @creation = Creation.find(params[:id])
+    Notifications.comment(@creation, current_user, params[:content]).deliver
+    redirect_to(@creation, :notice => "לקחתי את המעטפה שלכם ושמתי בתיבת הדואר של "+@creation.user.firstname)
+  end
 end

@@ -36,6 +36,16 @@
     = "התפרסם ב-"+l(@creation.created_at, :format => :full_date)+", לפני "+time_ago_in_words(@creation.created_at)
     != "<br/>"+@creation.user.firstname+" "+@creation.user.lastname+", גרעין "+@creation.user.garin.name+", שכבת "+@creation.user.garin.grade.name+". "+@creation.user.phoneext+"-"+@creation.user.phone
 
+  #creation-comment(style="text-align:center;margin-top:1em; margin-bottom: 3em;")
+    = link_to image_tag('/images/comment.png')+" שלח תגובה אישית ל#{@creation.user.firstname}", '#', :onclick => "$('#creation-comment-hidden').slideToggle('slow'); return false;"
+    #creation-comment-hidden{:style => "display: none;"}
+      %br
+      %form{:action => "#{creation_path(@creation)}/comment", :method => "post"}
+        %textarea{:name=> "content", :style => "font-family: sans-serif; height: 100px;"} הי #{@creation.user.firstname}, ראיתי את מה שפרסמת בדוור הטוב וחשבתי ש
+        %br
+        %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}
+        %input{:type => "submit", :value => "שלח את התגובה ממני ל#{@creation.user.firstname}"}
+
 %div.span-24.last
   %div.span-6
     %p

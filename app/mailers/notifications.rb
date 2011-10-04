@@ -15,4 +15,12 @@ class Notifications < ActionMailer::Base
     end
     mail :to => @to, :subject => "יצירה חדשה של "+@creation.user.fullname
   end
+
+  def comment(creation, current_user, content)
+    @creation = creation
+    @user = current_user
+    @content = content
+    mail :from => @user.email, :to => @creation.user.email, :subject => "קבלת תגובה בדוור הטוב"
+  end
+
 end
