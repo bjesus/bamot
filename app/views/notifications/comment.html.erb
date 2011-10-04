@@ -5,7 +5,7 @@
   </head>
   <body>
   <h4>שלום,</h4>
-  <p>#{@user.firstname} #{@user.lastname} כתב\ה לך תגובה דרך הדוור הטוב. </p>
+  <p><%= @user.firstname %> <%= @user.lastname %> כתב/ה לך תגובה דרך הדוור הטוב. </p>
   <hr>
   <%= simple_format(@content) %>
   <hr>
