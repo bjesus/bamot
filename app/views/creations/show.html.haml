@@ -41,7 +41,7 @@
     #creation-comment-hidden{:style => "display: none;"}
       %br
       %form{:action => "#{creation_path(@creation)}/comment", :method => "post"}
-        %textarea{:name=> "content", :style => "font-family: sans-serif; height: 100px;"} הי #{@creation.user.firstname}, ראיתי את מה שפרסמת בדוור הטוב וחשבתי ש
+        %textarea{:name=> "content", :style => "font-family: sans-serif; height: 100px;", :placeholder => "הי #{@creation.user.firstname}, ראיתי את מה שפרסמת בדוור הטוב וחשבתי ש"}
         %br
         %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}
         %input{:type => "submit", :value => "שלח את התגובה ממני ל#{@creation.user.firstname}"}
